@@ -64,6 +64,8 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const idFromEnv = process.env.REACT_APP_TEST_ID;
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -83,7 +85,7 @@ const App = () => {
             screen and then come back to see your edits.
           </Section>
           <Section title="Hello World">
-            Hello World from TypeScript project.
+            Hello World from TypeScript project. {process.env.}
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
