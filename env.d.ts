@@ -1,3 +1,3 @@
 declare module '@env' {
-  export const REACT_APP_TEST_ID: string;
+  export const STRAVA_API_URL: string;
 }

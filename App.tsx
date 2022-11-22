@@ -27,7 +27,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {REACT_APP_TEST_ID} from '@env';
+import {STRAVA_API_URL} from '@env';
 
 const Section: React.FC<
   PropsWithChildren<{
@@ -66,7 +66,7 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  const idFromEnv = REACT_APP_TEST_ID || 'failed';
+  const idFromEnv = STRAVA_API_URL || 'failed';
 
   return (
     <SafeAreaView style={backgroundStyle}>
