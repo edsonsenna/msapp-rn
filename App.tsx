@@ -27,6 +27,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import {REACT_APP_TEST_ID} from '@env';
+
 const Section: React.FC<
   PropsWithChildren<{
     title: string;
@@ -64,7 +66,7 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  const idFromEnv = process.env.REACT_APP_TEST_ID;
+  const idFromEnv = REACT_APP_TEST_ID || 'failed';
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -85,7 +87,7 @@ const App = () => {
             screen and then come back to see your edits.
           </Section>
           <Section title="Hello World">
-            Hello World from TypeScript project. {process.env.}
+            Hello World from TypeScript project. {idFromEnv}
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
