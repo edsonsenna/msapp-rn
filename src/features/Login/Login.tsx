@@ -18,6 +18,7 @@ const config = {
 const Login = () => {
   const [authState, setAuthState] = useState<AuthorizeResult>();
   const handleOnLoginPress = async () => {
+    // TODO: Debug authorize of null problem.
     try {
       console.log({config});
       console.log({authorize: authorize(config)});
