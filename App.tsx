@@ -8,8 +8,9 @@
  * @format
  */
 
-import React, {type PropsWithChildren} from 'react';
+import React, {useEffect, type PropsWithChildren} from 'react';
 import {
+  Linking,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -35,6 +36,17 @@ const Section: React.FC<
   }>
 > = ({children, title}) => {
   const isDarkMode = useColorScheme() === 'dark';
+
+  useEffect(() => {
+    listenToDeepLinks();
+  }, []);
+
+  const listenToDeepLinks = () => {
+    Linking.addEventListener('url', ({url}) => {
+      console.log('Called from deep link', url);
+    });
+  };
+
   return (
     <View style={styles.sectionContainer}>
       <Text
