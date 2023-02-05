@@ -5,6 +5,7 @@ import {Link} from 'react-router-native';
 const Login = () => {
   const handleOnLoginClick = async () => {
     try {
+      // TODO: Check installed Strava App behavior
       // const canOpenStravaApp = await Linking.canOpenURL(
       //   'strava://oauth/mobile/authorize',
       // );
@@ -23,9 +24,8 @@ const Login = () => {
 
   return (
     <View style={{paddingTop: 60, paddingLeft: 20}}>
-      <Text>Workxxs!</Text>
       <Link to="/home">
-        <Text>Home</Text>
+        <Text>Login Page</Text>
       </Link>
       <Button title="Login with Strava" onPress={handleOnLoginClick} />
     </View>
